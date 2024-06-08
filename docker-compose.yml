@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  benchmark-service:
+    container_name: "bench-go"
+    image: go-bench
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 256M
+        reservations:
+          memory: 256M
+    environment:
+      - ROUTINE_COUNT=100000
